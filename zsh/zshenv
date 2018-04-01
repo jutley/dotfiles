@@ -1,0 +1,8 @@
+export ZDOTDIR="$HOME/zsh"
+
+export GOPATH=$(go env GOPATH)
+
+export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin/fresh"
+
+eval "$(direnv hook zsh)"

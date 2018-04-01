@@ -1,29 +1,29 @@
-# $'\n' => stupid way to do newline
-function custom_prompt() {
-  alert=$1
-  line1='$fg_bold[white][%D %*] %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-  line2='${ret_status} %{$reset_color%}'
-  PS1=$'\n'"$line1% $alert"$'\n'"$line2"
-}
-custom_prompt
-
-bindkey -v
-
-function bold_white_text() {
-  text=$1
-  echo "%{$fg_bold[white]%} $text % %{$reset_color%}"
+function ins-or-cmd() {
+  echo -n '%{$fg[white]%}'
+  if [[ "$KEYMAP" == "main" ]]; then
+    echo -n 'INS'
+  else
+    echo -n 'CMD'
+  fi
 }
 
-function zle-line-init zle-keymap-select {
-    command_prompt=$(bold_white_text '-- COMMAND MODE --')
-    insert_prompt=$(bold_white_text '-- INSERT  MODE --')
-    notification=$insert_prompt
-    if [[ $KEYMAP == "vicmd" ]]; then notification=$command_prompt fi
-    custom_prompt $notification
-    zle reset-prompt
+function date() {
+  echo '$fg_bold[white][%*]'
+}
+
+function update-custom-prompt() {
+  dir='%{$fg[cyan]%}%c'
+  line1="$(date) ${dir} $(git_prompt_info) -- $(ins-or-cmd)"
+  line2="${ret_status} %{$reset_color%}"
+  ln=$'\n'
+  export PROMPT="${ln}${line1}${ln}$line2"
+}
+
+function zle-line-init zle-keymap-select() {
+  update-custom-prompt
+  zle reset-prompt
 }
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=1
-
+update-custom-prompt

@@ -7,3 +7,5 @@ export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin"
 export GOPATH=$(go env GOPATH)
 
 eval "$(direnv hook zsh)"
+
+source ~/.creds/secrets.env

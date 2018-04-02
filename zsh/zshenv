@@ -2,7 +2,7 @@ export ZDOTDIR="$HOME/zsh"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
-export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin/fresh"
+export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin"
 
 export GOPATH=$(go env GOPATH)
 

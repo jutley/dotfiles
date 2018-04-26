@@ -10,13 +10,13 @@ function ins-or-cmd() {
   echo -n '%{%u%}'
 }
 
-function date() {
+function prompt-date() {
   echo -n '%{$fg_bold[white]%}[%*]'
 }
 
 function update-custom-prompt() {
   dir='%{$fg[cyan]%}%c'
-  line1="$(date) ${dir} $(git_prompt_info)$(ins-or-cmd)"
+  line1="$(prompt-date) ${dir} $(git_prompt_info)$(ins-or-cmd)"
   line2="${ret_status} %{$reset_color%}"
   ln=$'\n'
   export PROMPT="${ln}${line1}${ln}$line2"

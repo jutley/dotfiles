@@ -3,7 +3,7 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="false"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git kubectl)
+plugins=(git kubectl docker)
 
 source $ZSH/oh-my-zsh.sh
 

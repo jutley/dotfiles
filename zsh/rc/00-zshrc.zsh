@@ -6,6 +6,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git kubectl docker)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.fresh/build/shell.sh
 
 bindkey -v
 

@@ -10,3 +10,6 @@ source $HOME/.fresh/build/shell.sh
 
 bindkey -v
 
+if [ -f ~/.exercism/exercism_completion.zsh ]; then
+  source ~/.exercism/exercism_completion.zsh
+fi

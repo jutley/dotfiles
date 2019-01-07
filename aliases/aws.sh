@@ -1,11 +1,10 @@
-function shorten_region() {
+shorten_region() {
   local long_region="$1"
-  echo "$long_region" \
-    | sed -e 's/-//g' \
-    | sed -e 's/north/n/' \
-    | sed -e 's/east/e/' \
-    | sed -e 's/south/s/' \
-    | sed -e 's/west/w/' \
-    | sed -e 's/central/c/' \
-    | sed -e 's/gov/g/'
+  sed -e 's/-//g' \
+      -e 's/north/n/' \
+      -e 's/east/e/' \
+      -e 's/south/s/' \
+      -e 's/west/w/' \
+      -e 's/central/c/' \
+      -e 's/gov/g/' <<< "$long_region"
 }

@@ -16,7 +16,7 @@ function prompt-date() {
 
 function update-custom-prompt() {
   dir='%{$fg[cyan]%}%~'
-  line1="$(prompt-date) ${dir} $(git_prompt_info)  $(ins-or-cmd)"
+  line1="$(prompt-date) ${dir} $(git_prompt_info)$(ins-or-cmd)"
   line2="${ret_status} %{$reset_color%}"
   ln=$'\n'
   export PROMPT="${ln}${line1}${ln}$line2"

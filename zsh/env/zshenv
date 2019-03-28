@@ -4,6 +4,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin"
 export PATH="$PATH:$HOME/Library/Python/3.6/bin"
+export PATH="$PATH:$HOME/.krew/bin"
 
 export GOPATH=$(go env GOPATH)
 

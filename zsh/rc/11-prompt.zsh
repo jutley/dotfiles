@@ -11,15 +11,25 @@ function ins-or-cmd() {
 }
 
 function prompt-date() {
-  echo -n '%{$fg_bold[white]%}[%*]'
+  echo -n '%B%F{white}%*%b%f'
 }
 
 function update-custom-prompt() {
-  dir='%{$fg[cyan]%}%~'
-  line1="$(prompt-date) ${dir} $(git_prompt_info)$(ins-or-cmd)"
+  export KUBE_PS1_PREFIX=""
+  export KUBE_PS1_SEPARATOR=""
+  export KUBE_PS1_SYMBOL_DEFAULT="%B%F{blue}k8s:(%b%f"
+  export KUBE_PS1_CLUSTER_FUNCTION="format-cluster"
+  export KUBE_PS1_DIVIDER="%B%F{black}/%b%f"
+  export KUBE_PS1_NAMESPACE_FUNCTION="format-namespace"
+  export KUBE_PS1_SUFFIX="%B%F{blue})%b%f"
+
+  dir='%B%F{cyan}%1d%b%f'
+  line1="$(prompt-date) ${dir} $(kube_ps1) $(git_prompt_info)$(ins-or-cmd)"
   line2="${ret_status} %{$reset_color%}"
   ln=$'\n'
-  export PROMPT="${ln}${line1}${ln}$line2"
+  export PROMPT="
+$line1
+$line2"
 }
 
 function zle-line-init zle-keymap-select() {

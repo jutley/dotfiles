@@ -15,6 +15,8 @@ function prompt-date() {
 }
 
 function update-custom-prompt() {
+  source /path/to/kube-ps1.sh
+
   export KUBE_PS1_PREFIX=""
   export KUBE_PS1_SEPARATOR=""
   export KUBE_PS1_SYMBOL_DEFAULT="%B%F{blue}k8s:(%b%f"

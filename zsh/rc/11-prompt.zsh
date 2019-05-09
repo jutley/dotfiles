@@ -14,6 +14,14 @@ function prompt-date() {
   echo -n '%B%F{white}%*%b%f'
 }
 
+function format-cluster() {
+  echo "%B%F{red}$1%b%f"
+}
+
+function format-namespace() {
+  echo "%B%F{red}$1%b%f"
+}
+
 function update-custom-prompt() {
   source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 

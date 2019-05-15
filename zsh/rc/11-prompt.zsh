@@ -1,13 +1,9 @@
 function ins-or-cmd() {
-  echo -n '%{$fg_bold[white]%}|%{$reset_color%} ' # delimeter
-  echo -n '%{%U%}' # start underline
-  echo -n '%{$fg[white]%}'
+  local mode='CMD'
   if [[ "$KEYMAP" == "main" ]]; then
-    echo -n 'INS'
-  else
-    echo -n 'CMD'
+    mode='INS'
   fi
-  echo -n '%{%u%}'
+  echo -n "%F{white}%B|%b %U$mode%u%f"
 }
 
 function prompt-date() {

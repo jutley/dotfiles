@@ -1,5 +1,7 @@
 # export ZDOTDIR="$HOME/zsh"
 
+export GPG_TTY=$(tty)
+
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin"

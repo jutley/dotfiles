@@ -14,4 +14,5 @@ if [ -f ~/.exercism/exercism_completion.zsh ]; then
   source ~/.exercism/exercism_completion.zsh
 fi
 
-source ~/awscli-ve/bin/activate
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/awscli-ve/bin/activate

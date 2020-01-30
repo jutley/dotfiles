@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/.krew/bin"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export GOPATH=$(go env GOPATH)
+export PIPENV_IGNORE_VIRTUALENVS=1
 
 eval "$(direnv hook zsh)"
 

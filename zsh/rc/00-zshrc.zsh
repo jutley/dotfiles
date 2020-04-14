@@ -5,11 +5,11 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=(git kubectl docker)
 
-autoload bashcompinit && bashcompinit
-complete -C "$(which aws_completer)" aws
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.fresh/build/shell.sh
+
+autoload bashcompinit && bashcompinit
+complete -C "$(which aws_completer)" aws
 
 bindkey -v
 

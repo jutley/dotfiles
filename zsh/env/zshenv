@@ -17,6 +17,8 @@ export PYENV_ROOT=$HOME/.pyenv
 
 export AWS_PAGER=""
 
+export KUBECTL_EXTERNAL_DIFF=kdiff
+
 eval "$(direnv hook zsh)"
 
 source ~/.creds/secrets.env

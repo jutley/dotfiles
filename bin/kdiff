@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 LIVE="$1"
 MERGED="$2"
 
-for FILE in "$LIVE"/*; do
+for FILE in "$LIVE"/* "$MERGED"/*; do
   yq -y 'del(.metadata.annotations["kubernetes.io/change-cause"]) | del(.metadata.generation)' < "$FILE" > "$FILE-tmp"
   mv "$FILE-tmp" "$FILE"
 done
-
-for FILE in "$MERGED"/*; do
-  yq -y 'del(.metadata.annotations["kubernetes.io/change-cause"]) | del(.metadata.generation)' < "$FILE" > "$FILE-tmp"
-  mv "$FILE-tmp" "$FILE"
-done
-
 
 diff -uN "$LIVE" "$MERGED"
 

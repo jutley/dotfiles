@@ -26,3 +26,5 @@ def align_on(separator):
       | $former + " " + separator + " " + $latter
     );
 
+def expand_jwt(): split(".") | .[:2] |= map(@base64d | fromjson);
+

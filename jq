@@ -4,6 +4,8 @@ def count_by_key(key_filter): group_by_key_value(key_filter; length);
 
 def oneof(values): . as $v | values | any(. == $v);
 
+def zip(a;b): if (a | length) == (b | length) then ([range(a | length)] | map([a[.], b[.]])) else empty end;
+
 def tabularize(headers):
     (map(. as $row | headers | map($row[.])) | sort) as $rows
   | (headers, $rows[])

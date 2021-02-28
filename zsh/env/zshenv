@@ -3,13 +3,14 @@
 export GPG_TTY=$(tty)
 
 export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Python/3.6/bin"
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:$HOME/.fresh/source/freshshell/fresh/bin"
-export PATH="$PATH:$HOME/Library/Python/3.6/bin"
-export PATH="$PATH:$HOME/.krew/bin"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/.pyenv/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.krew/bin"
 
 export GOPATH=$(go env GOPATH)
 export PIPENV_IGNORE_VIRTUALENVS=1

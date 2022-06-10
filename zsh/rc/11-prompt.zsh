@@ -33,7 +33,7 @@ function update-custom-prompt() {
 
   dir='%B%F{cyan}%1d%b%f'
   line1="$(prompt-date) ${dir} $(kube_ps1) $(git_prompt_info)$(ins-or-cmd)"
-  line2="${ret_status} %{$reset_color%}"
+  line2="${RET_STATUS} %{$reset_color%}"
   ln=$'\n'
   export PROMPT="
 $line1

@@ -28,6 +28,8 @@ function update-custom-prompt() {
   export KUBE_PS1_DIVIDER="%B%F{black}/%b%f"
   export KUBE_PS1_NAMESPACE_FUNCTION="format-namespace"
   export KUBE_PS1_SUFFIX="%B%F{blue})%b%f"
+  
+  export RET_STATUS="%(?:%{$fg_bold[green]%}→ :%{$fg_bold[red]%}→ )"
 
   dir='%B%F{cyan}%1d%b%f'
   line1="$(prompt-date) ${dir} $(kube_ps1) $(git_prompt_info)$(ins-or-cmd)"

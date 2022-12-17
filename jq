@@ -1,4 +1,4 @@
-def group_by_key(key_filter): group_by(key_filter) | map({(.[0] | key_filter | tostring): .}) | add;
+def group_by_key(key_filter): group_by(key_filter) | map({(.[0] | key_filter | tostring): .}) | (add // []);
 def group_by_key_value(key_filter; value_filter): group_by_key(key_filter) | map_values(value_filter);
 def count_by_key(key_filter): group_by_key_value(key_filter; length);
 

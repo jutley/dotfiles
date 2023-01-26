@@ -21,9 +21,9 @@ function format-namespace() {
 function update-custom-prompt() {
   source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 
-  export KUBE_PS1_PREFIX=""
+  export KUBE_PS1_PREFIX="%B%F{blue}k8s:(%b%f"
   export KUBE_PS1_SEPARATOR=""
-  export KUBE_PS1_SYMBOL_DEFAULT="%B%F{blue}k8s:(%b%f"
+  export KUBE_PS1_SYMBOL_ENABLE="false"
   export KUBE_PS1_CLUSTER_FUNCTION="format-cluster"
   export KUBE_PS1_DIVIDER="%B%F{black}/%b%f"
   export KUBE_PS1_NAMESPACE_FUNCTION="format-namespace"

@@ -8,4 +8,5 @@ fresh jutley/dotfiles 'zsh/env/*' --file='~/.zshenv'
 fresh jutley/dotfiles 'aliases/*'
 fresh jutley/dotfiles 'bin/*' --bin
 fresh jutley/dotfiles 'jq' --file
+fresh jutley/dotfiles 'gitignore' --file
 ```

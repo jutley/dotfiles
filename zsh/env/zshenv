@@ -21,5 +21,6 @@ export AWS_PAGER=""
 export KUBECTL_EXTERNAL_DIFF=kdiff
 
 eval "$(direnv hook zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 source ~/.creds/secrets.env

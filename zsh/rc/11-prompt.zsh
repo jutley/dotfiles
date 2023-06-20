@@ -19,7 +19,7 @@ function format-namespace() {
 }
 
 function update-custom-prompt() {
-  source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+  source "$HOMEBREW_PREFIX/bin/kube-ps1/share/kube-ps1.sh"
 
   export KUBE_PS1_PREFIX="%B%F{blue}k8s:(%b%f"
   export KUBE_PS1_SEPARATOR=""

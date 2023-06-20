@@ -10,3 +10,8 @@ fresh jutley/dotfiles 'bin/*' --bin
 fresh jutley/dotfiles 'jq' --file
 fresh jutley/dotfiles 'gitignore' --file
 ```
+
+## Non-brew things
+
+* fresh
+* oh-my-zsh

@@ -5,6 +5,7 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=(git kubectl docker)
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.fresh/build/shell.sh
 

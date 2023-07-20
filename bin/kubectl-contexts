@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+kubectl config view -o json | jq -r '.contexts[].name'
+

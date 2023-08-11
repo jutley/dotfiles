@@ -14,7 +14,7 @@ export PATH="$PATH:$HOME/.pyenv/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.krew/bin"
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
-export PATH="$PATH:$(gem environment gemdir)"
+export PATH="$PATH:$(gem environment gemdir)/bin"
 
 export GOPATH=$(go env GOPATH)
 export PIPENV_IGNORE_VIRTUALENVS=1

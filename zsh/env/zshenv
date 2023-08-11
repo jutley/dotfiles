@@ -13,6 +13,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PATH="$PATH:$HOME/.pyenv/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.krew/bin"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$PATH:$(gem environment gemdir)"
 
 export GOPATH=$(go env GOPATH)
 export PIPENV_IGNORE_VIRTUALENVS=1

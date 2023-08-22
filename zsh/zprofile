@@ -25,5 +25,6 @@ export AWS_PAGER=""
 export KUBECTL_EXTERNAL_DIFF=kdiff
 
 eval "$(direnv hook zsh)"
+eval "$(rbenv init - zsh)"
 
 source ~/.creds/secrets.env

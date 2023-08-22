@@ -23,4 +23,3 @@ source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 
 eval "$(jenv init -)"
 eval "$(pyenv init -)"
-

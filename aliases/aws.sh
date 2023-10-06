@@ -8,3 +8,5 @@ shorten_region() {
       -e 's/central/c/' \
       -e 's/gov/g/' <<< "$long_region"
 }
+
+alias assume=". assume"

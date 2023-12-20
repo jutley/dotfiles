@@ -19,7 +19,7 @@ def tabularize:
 
 def pad_str(length_with_padding): . as $str | [range(length_with_padding - length)] | map(" ") | join("") | $str + .;
 
-def align_on(separator): 
+def align_on(separator):
     map(split(separator) | map(tostring))
   | (map(.[0]) | max_by(length) | length) as $max_region_length
   | map(
@@ -30,3 +30,34 @@ def align_on(separator):
 
 def expand_jwt: split(".") | .[:2] |= map(@base64d | fromjson);
 
+# input should be a single string containing a markdown document
+def extract_markdown_codeblocks:
+  reduce split("\n")[] as $line ({codeblocks: [], current: {}};
+    ((
+      $line |
+      capture("^(?<indent>[^`]*)(?<ticks>`{3,})(?<language>.*)") |
+      .indent |= length |
+      .closingString = (.indent * " " + .ticks) |
+      .language |= sub(" *$"; "")
+    ) // {}) as $parsedLine |
+
+    if .current == {} and ($parsedLine.ticks | length) > 0
+    then
+      .current = ({lines: []} + $parsedLine)
+
+    elif .current != {} and $line != (.current.closingString)
+    then
+      .current.lines += [$line]
+
+    elif .current != {} and $line == (.current.closingString)
+    then
+      .codeblocks += [{
+        code: (.current.indent as $indent | .current.lines | map(.[$indent:]) | join("\n")),
+        language: .current.language
+      }] |
+      .current = {}
+
+    else .
+    end
+  ) |
+  .codeblocks;

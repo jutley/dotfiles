@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles to use with Fresh. Helps to keep my enviornment consistent across machines.
+My dotfiles to use with Fresh. Helps to keep my environment consistent across machines.
 
 ```sh
 fresh jutley/dotfiles 'zsh/rc/*' --file='~/.zshrc'

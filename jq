@@ -61,3 +61,20 @@ def extract_markdown_codeblocks:
     end
   ) |
   .codeblocks;
+
+def deep_intersect:
+  . as $input |
+  map(paths(type != "object" and type != "array")) | unique |
+  map(
+    . as $path |
+    $input | {
+      $path,
+      value: (
+        map(getpath($path)) |
+        select(length == ($input | length) and (unique | length == 1)) |
+        first
+      )
+    }
+  ) |
+  reduce .[] as $path_value ({}; setpath($path_value.path; $path_value.value))
+;

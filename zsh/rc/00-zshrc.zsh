@@ -3,11 +3,13 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="false"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git kubectl docker)
+plugins=(git docker)
 
 eval "$(brew shellenv)"
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.fresh/build/shell.sh"
+
+source <(kubectl completion zsh)
 
 autoload bashcompinit && bashcompinit
 complete -C "$(which aws_completer)" aws

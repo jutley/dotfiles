@@ -32,3 +32,5 @@ eval "$(rbenv init - zsh)"
 source ~/.creds/secrets.env
 source "$(brew --prefix nvm)/nvm.sh"
 
+[[ -f "$HOME/.hac/profile" ]] && source "$HOME/.hac/profile"
+

@@ -30,3 +30,5 @@ eval "$(direnv hook zsh)"
 eval "$(rbenv init - zsh)"
 
 source ~/.creds/secrets.env
+source "$(brew --prefix nvm)/nvm.sh"
+
